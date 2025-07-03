@@ -22,8 +22,8 @@ func processNumber(arr []int) {
 			continue
 		}
 
-		toPrint := fooBar(i)
-		fmt.Print(toPrint)
+		value := fooBar(i)
+		fmt.Print(value)
 
 		if i != 1 {
 			fmt.Print(", ")
@@ -36,7 +36,8 @@ func isPrime(number int) bool {
 		return false
 	}
 
-	for i := 2; i <= int(math.Sqrt(float64(number))); i++ {
+	sqrtOfNumber := int(math.Sqrt(float64(number)))
+	for i := 2; i <= sqrtOfNumber; i++ {
 		if number % i == 0 {
 			return false
 		}
