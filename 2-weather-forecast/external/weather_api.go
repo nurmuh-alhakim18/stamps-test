@@ -32,9 +32,9 @@ func UnitType() map[string]string {
 	}
 }
 
-func (wc *WeatherClient) GetForecasts() (*Forecast, error) {
+func (wc *WeatherClient) GetForecasts(temperatureUnit string) (*Forecast, error) {
 	cityID := "1642911"
-	unit, ok := wc.unitType["celcius"]
+	unit, ok := wc.unitType[temperatureUnit]
 	if !ok {
 		return nil, errors.New("unrecognized unit")
 	}

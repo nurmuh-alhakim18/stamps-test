@@ -17,7 +17,7 @@ func main() {
 	}
 
 	client := external.NewWeatherClient(cfg.ApiKey)
-	forecasts, err := client.GetForecasts()
+	forecasts, err := client.GetForecasts("celcius")
 	if err != nil {
 		log.Fatal(err)
 	}
